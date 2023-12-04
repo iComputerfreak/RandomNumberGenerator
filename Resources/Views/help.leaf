@@ -2,20 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Random Integer</title>
 </head>
 <body>
 <div class="container">
-    <div class="result">
-        #if(result != nil):
-            <span class="result-text">#(result)</span>
-        #else:
-            <span class="error-text">#(error)</span>
-        #endif
-    </div>
-    <div class="settings">
-        min = #(min); max = #(max)
+    <div class="help">
+        Use the <code>min</code> and <code>max</code> query parameters to specify a range.
     </div>
 </div>
 </body>
@@ -25,12 +17,27 @@
         src: url("fonts/Roboto/Roboto-Bold.ttf");
         font-weight: bold;
     }
-    
+
     @font-face {
         font-family: Roboto;
         src: url("fonts/Roboto/Roboto-Light.ttf");
     }
+
+    @font-face {
+        font-family: RobotoMono;
+        src: url("fonts/RobotoMono/RobotoMono-Bold.ttf");
+        font-weight: bold;
+    }
+
+    @font-face {
+        font-family: RobotoMono;
+        src: url("fonts/RobotoMono/RobotoMono-Light.ttf");
+    }
     
+    code {
+        font-family: RobotoMono, monospace;
+    }
+
     .container {
         display: flex;
         flex-direction: column;
@@ -40,23 +47,13 @@
         align-content: center;
         height: 100%;
     }
-    
-    .result {
-        font-size: 30vw;
+
+    .help {
+        font-size: 48pt;
         color: chocolate;
         font-weight: bold;
         margin-left: 10px;
         margin-right: 10px;
-    }
-
-    .settings {
-        font-size: 12pt;
-        color: grey;
-        font-weight: lighter;
-    }
-    
-    .error-text {
-        color: darkred;
     }
 
     body {
@@ -66,7 +63,7 @@
         font-family: Roboto, serif;
         text-align: center;
     }
-    
+
     html {
         height: 100%;
     }
