@@ -1,12 +1,61 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-
-  <title>#(title)</title>
+    <meta charset="UTF-8">
+    <title>Random Integer</title>
 </head>
-
 <body>
-  <h1>#(title)</h1>
+<div class="container">
+    <div class="result">
+        #(result)
+    </div>
+    <div class="settings">
+        min = #(min); max = #(max)
+    </div>
+</div>
 </body>
+<style>
+    @font-face {
+        font-family: Roboto;
+        src: url("fonts/Roboto/Roboto-Bold.ttf");
+        font-weight: bold;
+    }
+    
+    @font-face {
+        font-family: Roboto;
+        src: url("fonts/Roboto/Roboto-Light.ttf");
+    }
+    
+    .container {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    
+    .result {
+        font-size: 144pt;
+        color: chocolate;
+        font-weight: bold;
+    }
+
+    .settings {
+        font-size: 10pt;
+        color: grey;
+        font-weight: lighter;
+    }
+
+    body {
+        background-color: bisque;
+        height: 100%;
+        margin: 0;
+        font-family: Roboto, serif;
+    }
+    
+    html {
+        height: 100%;
+    }
+</style>
 </html>
