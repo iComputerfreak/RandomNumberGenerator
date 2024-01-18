@@ -7,7 +7,7 @@
 </head>
 <body>
 <div class="container">
-    <div class="result">
+    <div id="result">
         #if(result != nil):
             <span class="result-text">#(result)</span>
         #else:
@@ -41,12 +41,28 @@
         height: 100%;
     }
     
-    .result {
-        font-size: 30vw;
+    #result {
         color: chocolate;
         font-weight: bold;
-        margin-left: 10px;
-        margin-right: 10px;
+        
+        width: 80%;
+        height: 400px;
+        font-size: var(--font-size, 1em);
+        white-space: nowrap;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .result-text {
+        display: inline-block;
+    }
+        
+    #result > * {
+      display: inline-block;
     }
 
     .settings {
@@ -71,4 +87,21 @@
         height: 100%;
     }
 </style>
+<script>
+    function resize2fit(el) {
+      if (!el.parentElement) return;
+      el.style.setProperty("--font-size", "1em");
+      const {width: max_width, height: max_height} = el.getBoundingClientRect();
+      const {width, height} = el.children[0].getBoundingClientRect();
+      el.style.setProperty("--font-size", Math.min(max_width/width, max_height/height)+"em");
+    }
+    
+    const container_el = document.querySelector("#result");
+
+    window.addEventListener("resize", function(e) {
+        resize2fit(container_el);
+    });
+    
+    resize2fit(container_el);
+</script>
 </html>
