@@ -42,6 +42,8 @@
         position: fixed;
         bottom: 5px;
         left: 5px;
+        font-size: 16pt;
+        font-weight: bold;
     }
 
     .legal a:link, .legal a:visited {
