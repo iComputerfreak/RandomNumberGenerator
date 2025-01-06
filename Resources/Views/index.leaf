@@ -15,7 +15,9 @@
         #endif
     </div>
     <div class="settings">
-        min = #(min); max = #(max)
+        #if(min != nil && max != nil):
+            min = #(min); max = #(max)
+        #endif
     </div>
 </div>
 </body>
