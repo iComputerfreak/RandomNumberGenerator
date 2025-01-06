@@ -20,6 +20,11 @@
         #endif
     </div>
 </div>
+<footer class="legal">
+    <a href="https://jonasfrey.de/imprint/">Imprint</a>
+    &nbsp;
+    <a href="https://jonasfrey.de/privacy-policy2/">Data Privacy</a>
+</footer>
 </body>
 <style>
     @font-face {
@@ -32,7 +37,17 @@
         font-family: Roboto;
         src: url("fonts/Roboto/Roboto-Light.ttf");
     }
-    
+
+    .legal {
+        position: fixed;
+        bottom: 5px;
+        left: 5px;
+    }
+
+    .legal a:link, .legal a:visited {
+        color: chocolate;
+    }
+
     .container {
         display: flex;
         flex-direction: column;
